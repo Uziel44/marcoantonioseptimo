@@ -264,14 +264,16 @@ body.menu-open{overflow:hidden}
 
 /* 8 · LIBROS ------------------------------------------------------------- */
 #libros{padding-top:0}
-.books-hero{position:relative;isolation:isolate;display:grid;align-items:center;min-height:clamp(380px,48vw,540px);overflow:hidden}
-.books-hero>img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 30%;opacity:.35}
-.books-hero::after{content:"";position:absolute;inset:0;z-index:-1;
-  background:linear-gradient(90deg,rgba(11,24,56,.7) 0%,rgba(11,24,56,.45) 60%,rgba(11,24,56,.25) 100%)}
+.books-bg{position:relative;isolation:isolate;overflow:hidden}
+.books-bg__img{position:absolute;inset:0;z-index:-2;width:100%;height:100%;object-fit:cover;object-position:60% 30%}
+.books-bg::after{content:"";position:absolute;inset:0;z-index:-1;
+  background:linear-gradient(90deg,rgba(11,24,56,.72) 0%,rgba(11,24,56,.5) 60%,rgba(11,24,56,.3) 100%)}
+.books-bg .books-hero__copy,.books-bg .saga__text{text-shadow:0 1px 14px rgba(5,12,32,.85)}
+.books-hero{display:grid;align-items:center;min-height:clamp(380px,48vw,540px)}
 .books-hero__copy{padding-block:var(--s-7)}
 .books-hero__copy>*{max-width:48rem}
 .books-hero__more{margin-top:var(--s-4);max-width:62ch}
-@media (max-width:767.98px){.books-hero::after{background:rgba(11,24,56,.6)}}
+@media (max-width:767.98px){.books-bg::after{background:rgba(11,24,56,.6)}}
 
 .saga{display:grid;gap:var(--s-6);margin-block:var(--s-8);align-items:center}
 @media (min-width:1024px){.saga{grid-template-columns:4fr 8fr;gap:var(--s-9)}}

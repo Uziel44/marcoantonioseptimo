@@ -207,6 +207,7 @@ body.menu-open{overflow:hidden}
 .hero__copy{display:grid;justify-items:start;gap:var(--s-5);max-width:min(40rem,54vw)}
 .hero h1{font:600 var(--fs-hero)/1.02 var(--font-display);letter-spacing:-.01em;color:var(--text-strong)}
 .hero__sub{max-width:44ch;font-size:var(--fs-lead);line-height:1.5;color:var(--text)}
+.hero__rapta{font-style:normal;font-weight:600;color:var(--accent)}
 .hero__quote{max-width:34ch;padding-left:var(--s-5);border-left:1px solid var(--accent);
   font:italic 500 clamp(1.2rem,1.05rem + .7vw,1.6rem)/1.4 var(--font-display);color:var(--ivory)}
 .hero__cta{display:flex;flex-wrap:wrap;gap:var(--s-4);margin-top:var(--s-2)}

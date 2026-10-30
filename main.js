@@ -175,13 +175,6 @@
     tag.classList.toggle('is-upcoming', !past);
   });
 
-  /* ───────── 8. WhatsApp flotante: aparece al salir del hero ───────── */
-  const fab = $('.wa-fab');
-  const hero = $('#inicio');
-  if (fab && hero && 'IntersectionObserver' in window) {
-    new IntersectionObserver(([en]) => fab.classList.toggle('is-visible', !en.isIntersecting), { threshold: 0.05 }).observe(hero);
-  }
-
   /* ───────── 9. Lightbox de obras con <dialog> nativo ───────── */
   const dlg = $('#lightbox');
   if (dlg && typeof dlg.showModal === 'function') {

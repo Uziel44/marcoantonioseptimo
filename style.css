@@ -252,6 +252,11 @@ body.menu-open{overflow:hidden}
 .frame__img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 8%;
   border:1px solid var(--accent);border-radius:999px 999px var(--r-img) var(--r-img);
   filter:brightness(.95) contrast(1.03)}
+/* Móvil: el retrato ocupa la mitad del ancho (antes ~420 px) */
+@media (max-width:767.98px){
+  .frame{max-width:min(50%,210px)}
+  .frame::before{inset:10px -10px -10px 10px}
+}
 .about__lead{display:block;margin-bottom:var(--s-4);font:italic 500 var(--fs-quote)/1.35 var(--font-display);color:var(--ivory)}
 .facts{display:grid;gap:var(--s-2);margin-top:var(--s-5);padding-top:var(--s-5);border-top:1px solid var(--line);font-size:var(--fs-small);color:var(--text-muted)}
 .facts li{position:relative;padding-left:var(--s-5)}
@@ -312,6 +317,17 @@ body.menu-open{overflow:hidden}
 .book__more[open] summary::after{content:" −"}
 .book__more p{margin-top:var(--s-2)}
 @media (hover:hover){.book:hover{transform:translateY(-4px);background:var(--surface-hover);border-color:var(--line-gold);box-shadow:var(--shadow-card)}}
+/* Móvil: tarjeta horizontal (portada a la izquierda, datos a la derecha) con la mitad de alto que la vertical */
+@media (max-width:767.98px){
+  .carousel--books .carousel__slide{flex-basis:min(90vw,360px)}
+  .book{flex-direction:row}
+  .book__stage{flex:0 0 36%;padding:var(--s-4) var(--s-3)}
+  .book__cover{width:100%}
+  .book__body{padding:var(--s-4);gap:var(--s-2)}
+  .book__sub{font-size:1rem}
+  .book__actions{margin-top:0}
+  .book__actions .btn{padding-inline:12px;letter-spacing:.06em}
+}
 
 /* 9 · CURSOS Y CHARLAS --------------------------------------------------- */
 .courses{display:grid;gap:var(--s-6)}
@@ -491,14 +507,6 @@ body.menu-open{overflow:hidden}
 .to-top:hover{background:var(--accent);color:var(--bg)!important;text-decoration:none!important}
 
 /* 16 · FLOTANTES --------------------------------------------------------- */
-.wa-fab{position:fixed;right:max(16px,env(safe-area-inset-right));bottom:max(16px,env(safe-area-inset-bottom));z-index:30;
-  display:grid;place-items:center;width:56px;height:56px;border-radius:50%;background:var(--wa);color:var(--bg);
-  box-shadow:0 12px 28px -8px rgba(0,0,0,.6);opacity:0;transform:translateY(16px) scale(.9);pointer-events:none;
-  transition:opacity var(--t-base),transform var(--t-base) var(--ease)}
-.wa-fab:hover{color:var(--bg)}
-.wa-fab.is-visible{opacity:1;transform:none;pointer-events:auto}
-.wa-fab .icon{width:28px;height:28px}
-
 dialog#lightbox{max-width:min(92vw,900px);padding:0;border:1px solid var(--line-gold);border-radius:var(--r-img);background:var(--navy);color:var(--text)}
 dialog#lightbox::backdrop{background:rgba(8,18,43,.9)}
 dialog#lightbox img{max-height:78svh;width:100%;object-fit:contain}

@@ -12,8 +12,9 @@
   const smooth = () => (reduce.matches ? 'auto' : 'smooth');
 
   /* ───────── 0. Datos de contacto (un solo lugar para completar) ───────── */
-  // TODO cliente: WhatsApp en formato internacional sin "+", con 9 y sin 0 ni 15. Ej.: 5493515551234
-  const WA_NUMBER = '5493510000000';
+  // WhatsApp en formato internacional sin "+", con 9 y sin 0 ni 15 (ej.: 5493515551234). WA_DISPLAY es cómo se muestra el número en la página.
+  const WA_NUMBER = '5493512271316';
+  const WA_DISPLAY = '+54 9 3512 27-1316';
   // TODO cliente: email de contacto (se muestra y enlaza en Contacto y Footer)
   const CONTACT_EMAIL = '';
   // TODO opcional: endpoint de la plataforma de newsletter (POST JSON { email }). Vacío = se envía por WhatsApp.
@@ -30,7 +31,7 @@
       a.rel = 'noopener';
     });
     $$('[data-wa-label]').forEach(el => {
-      el.textContent = `+${WA_NUMBER.replace(/^(\d{2})(\d)(\d{3})(\d+)$/, '$1 $2 $3 $4')}`;
+      el.textContent = WA_DISPLAY;
       el.classList.remove('ph');
     });
   }
@@ -312,23 +313,11 @@
     });
   }
 
-  /* ───────── 10b. Celular: el formulario de consulta se abre en una tarjeta emergente (botón data-open="consulta-dialog") ───────── */
+  /* ───────── 10b. El formulario de consulta se abre en una tarjeta emergente (botón data-open="consulta-dialog") ───────── */
   const consultDlg = $('#consulta-dialog');
   if (form && consultDlg && typeof consultDlg.showModal === 'function') {
-    const slot = form.parentElement;                              // lugar del formulario en la página
-    const holder = $('.consulta-dialog__body', consultDlg);
-    const phone = window.matchMedia('(max-width: 639.98px)');
-    const placeForm = () => {
-      if (phone.matches) {
-        form.classList.add('is-in');                              // dentro del <dialog> cerrado no se dispara el reveal
-        holder.appendChild(form);
-      } else {
-        if (consultDlg.open) consultDlg.close();
-        slot.prepend(form);
-      }
-    };
-    placeForm();
-    phone.addEventListener('change', placeForm);
+    form.classList.add('is-in');                                  // dentro del <dialog> cerrado no se dispara el reveal
+    $('.consulta-dialog__body', consultDlg).appendChild(form);
   }
 
   const sub = $('#subscribe-form');

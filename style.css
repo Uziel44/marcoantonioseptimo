@@ -117,11 +117,9 @@ button,input,select,textarea{font:inherit}
 .icon{flex:none;width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .icon--lg{width:40px;height:40px;stroke:var(--accent);stroke-width:1.5}
 .icon--xl{width:44px;height:44px;stroke:var(--accent);stroke-width:1.5}
-.icon--fill{fill:currentColor;stroke:none}
 
 /* Datos pendientes del cliente: visibles pero prolijos */
 .ph{color:var(--text-muted);border-bottom:1px dashed var(--line-gold)}
-.ph--line{display:block;border:0;font-size:var(--fs-small)}
 a.ph{text-decoration:none}
 
 .card{display:grid;gap:var(--s-3);align-content:start;padding:var(--s-6);
@@ -143,7 +141,6 @@ a.ph{text-decoration:none}
   transition:transform var(--t-base) var(--ease),box-shadow var(--t-base) var(--ease),background var(--t-base),color var(--t-fast),border-color var(--t-fast)}
 .btn .icon{width:20px;height:20px}
 .btn--sm{min-height:44px;padding:0 18px;font-size:.75rem;letter-spacing:.09em}
-.btn--block{width:100%}
 .btn:active{transform:translateY(0) scale(.98)}
 .btn:focus-visible{outline:2px solid var(--ivory);outline-offset:3px;box-shadow:0 0 0 6px rgba(197,160,89,.35)}
 .btn[aria-disabled="true"],.btn:disabled{opacity:.5;pointer-events:none}
@@ -274,7 +271,6 @@ body.menu-open{overflow:hidden}
 .facts{display:grid;gap:var(--s-2);margin-top:var(--s-5);padding-top:var(--s-5);border-top:1px solid var(--line);font-size:var(--fs-small);color:var(--text-muted)}
 .facts li{position:relative;padding-left:var(--s-5)}
 .facts li::before{content:"";position:absolute;left:0;top:.7em;width:12px;height:1px;background:var(--accent)}
-.about__cta{margin-top:var(--s-6)}
 
 .rapta{display:grid;justify-items:center;gap:var(--s-4);max-width:56rem;margin:var(--s-9) auto 0;padding:var(--s-7) var(--s-6);text-align:center;
   border:1px solid var(--line-gold);border-radius:var(--r-card);background:rgba(16,29,61,.6)}
@@ -454,16 +450,17 @@ body.menu-open{overflow:hidden}
 .levels{display:grid;gap:var(--s-4);margin-top:var(--s-6)}
 @media (min-width:640px){.levels{grid-template-columns:repeat(2,1fr)}}
 @media (min-width:1024px){.levels{grid-template-columns:repeat(4,1fr)}}
-.levels .card .btn{justify-self:start;margin-top:var(--s-2)}
+/* Los botones quedan alineados abajo en las cuatro tarjetas, aunque el texto de una sea más largo */
+.levels .card{display:flex;flex-direction:column}
+.levels .card .btn{align-self:flex-start;margin-top:auto}
 /* Celular: las 4 tarjetas de niveles van en una grilla de 2x2, con textos y botones más chicos */
 @media (max-width:639.98px){
   .levels{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s-3);margin-top:var(--s-5)}
   .levels .card{display:flex;flex-direction:column;gap:6px;padding:var(--s-3)}
   .levels .card__title{font-size:clamp(.875rem,4.4vw,1rem)}
   .levels .card p{font-size:.75rem;line-height:1.4}
-  .levels .card p.ph--line{font-size:.625rem}
   .levels .card p.path__num{font-size:.625rem}
-  .levels .card .btn{min-height:36px;padding:0 8px;font-size:.5625rem;letter-spacing:.05em;margin-top:auto}
+  .levels .card .btn{align-self:stretch;min-height:36px;padding:0 8px;font-size:.5625rem;letter-spacing:.05em}
 }
 .photos{display:grid;gap:var(--s-4);grid-template-columns:1fr}
 .photo{position:relative;margin:0;overflow:hidden;aspect-ratio:16/10;background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
@@ -526,7 +523,11 @@ body.menu-open{overflow:hidden}
 }
 .pull{margin-top:var(--s-4);padding-left:var(--s-5);border-left:1px solid var(--accent);font:italic 500 clamp(1.1rem,.95rem + .7vw,1.4rem)/1.4 var(--font-display);color:var(--ivory)}
 .paths{display:grid;gap:var(--s-4);margin-top:var(--s-6)}
-@media (min-width:1024px){.paths{grid-template-columns:repeat(3,1fr)}}
+/* Escritorio: separaciones un poco más chicas para que la intro y las 3 tarjetas entren juntas en una pantalla de 742 px */
+@media (min-width:1024px){
+  #servicios{padding-top:var(--s-5)}
+  .paths{grid-template-columns:repeat(3,1fr);margin-top:var(--s-5)}
+}
 .path{position:relative;display:grid;gap:var(--s-2);align-content:start;justify-items:start;padding:var(--s-4) var(--s-5) var(--s-5);
   background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card);
   transition:transform var(--t-base) var(--ease),border-color var(--t-base),background var(--t-base)}
@@ -535,11 +536,10 @@ body.menu-open{overflow:hidden}
 .path__num{position:absolute;top:var(--s-4);right:var(--s-5)}
 .path__title{font:600 var(--fs-h3)/1.2 var(--font-display);color:var(--text-strong)}
 @media (hover:hover){.path:hover{transform:translateY(-4px);background:var(--surface-hover);border-color:var(--line-gold)}}
-.services__cta{margin-top:var(--s-4);text-align:center}
 /* Retrato sentado: el encuadre deja ver de la cabeza a los zapatos dentro del marco 4/5 (el anterior estaba pensado para una foto de pie) */
 .services__intro .frame__img{object-position:50% 58%}
 /* Celular: el título va con la foto en miniatura y las 3 tarjetas quedan justo debajo, así se ven juntos en una pantalla.
-   El texto, la cita y el botón siguen después de las tarjetas (con el texto entre medio no entraba todo en la pantalla) */
+   El texto y la cita siguen después de las tarjetas (con el texto entre medio no entraba todo en la pantalla) */
 @media (max-width:639.98px){
   #servicios{padding-top:var(--s-4);padding-bottom:var(--s-4)}
   #servicios>.container{display:grid;grid-template-columns:72px minmax(0,1fr);column-gap:var(--s-5);align-items:start}
@@ -551,13 +551,18 @@ body.menu-open{overflow:hidden}
   .paths{grid-area:3/1/4/3;gap:var(--s-2);margin-top:var(--s-4)}
   .services__intro>div>p:not(.eyebrow){grid-area:4/1/5/3;margin-top:var(--s-5)}
   .pull{grid-area:5/1/6/3}
-  .services__cta{grid-area:6/1/7/3}
   .path{grid-template-columns:auto 1fr;align-items:center;column-gap:var(--s-2);row-gap:4px;padding:var(--s-3)}
   .path .icon--xl{width:24px;height:24px}
   .path__title{font-size:1.0625rem;line-height:1.15}
   .path>p:not(.path__num){grid-column:1/-1;font-size:.8125rem;line-height:1.4}
   .path .btn{grid-column:1/-1;justify-self:stretch;min-height:38px;padding:0 10px;font-size:.625rem;letter-spacing:.06em;margin-top:2px}
   .path__num{top:var(--s-3);right:var(--s-3);font-size:.5625rem}
+}
+/* Celulares muy angostos (320 px): tarjetas un poco más ajustadas para que las tres sigan entrando junto al título */
+@media (max-width:339.98px){
+  .path{padding:var(--s-2) var(--s-3)}
+  .path>p:not(.path__num){font-size:.75rem}
+  .path .btn{min-height:34px}
 }
 
 /* 11 · GALERÍA ----------------------------------------------------------- */
@@ -604,7 +609,6 @@ body.menu-open{overflow:hidden}
   .carousel--art .art{gap:var(--s-2)}
   .carousel--art .art__title{font-size:1.1rem}
   .carousel--art .art__meta{font-size:.8125rem;line-height:1.4}
-  .carousel--art .btn{min-height:34px;padding:0 10px;font-size:.625rem;letter-spacing:.06em}
   .carousel--art .badge--float{padding:4px 8px;font-size:.5625rem}
 }
 /* Celular: las 6 obras van en una grilla de 2x2 que se desliza por páginas (2 columnas = 4 obras).
@@ -619,8 +623,6 @@ body.menu-open{overflow:hidden}
   .carousel--art .art__media{aspect-ratio:1/1}
   .carousel--art .art__title{font-size:.9375rem}
   .carousel--art .art__meta{font-size:.625rem;line-height:1.35}
-  .carousel--art .btn{min-height:36px;gap:6px;padding:0 8px;font-size:.5625rem;letter-spacing:.05em}
-  .carousel--art .btn .icon{width:14px;height:14px}
   .carousel--art .badge--float{left:var(--s-2);top:var(--s-2);padding:3px 6px;font-size:.5rem;letter-spacing:.1em}
   .carousel--art .carousel__ui{gap:var(--s-3);margin-top:var(--s-1)}
   .carousel--art .carousel__count{font-size:.6875rem}
@@ -706,21 +708,15 @@ body.menu-open{overflow:hidden}
 /* La foto (desde 1024 px) va arriba de las redes; el espacio de abajo deja lugar al marco dorado, que sobresale 16 px */
 .contact__photo{display:none}
 .contact__forms{display:grid;gap:var(--s-5);margin-top:var(--s-4)}
-/* Escritorio: texto y foto con redes a la izquierda, formulario de consulta a la derecha y suscripción en una franja debajo */
+/* Escritorio: a la izquierda el texto con el botón del formulario (que se abre en una tarjeta emergente) y la suscripción debajo;
+   a la derecha la foto con las redes */
 @media (min-width:1024px){
-  .contact__grid{grid-template-columns:5fr 6fr;grid-template-rows:auto 1fr auto;column-gap:var(--s-9);row-gap:var(--s-6);align-items:start}
-  .contact__forms{display:contents}
+  .contact__grid{grid-template-columns:minmax(0,7fr) minmax(0,5fr);grid-template-rows:auto 1fr;column-gap:var(--s-9);row-gap:var(--s-5);align-items:start}
   .contact__info{grid-column:1;grid-row:1}
-  .contact__me{grid-column:1;grid-row:2}
-  #contact-form{grid-column:2;grid-row:1 / span 2}
-  #subscribe-form{grid-column:1 / -1;grid-row:3}
-  .contact__photo{display:block;width:100%;max-width:240px;margin:0}
-}
-@media (min-width:1024px) and (max-width:1279.98px){
-  #subscribe-form{grid-template-columns:1fr 1fr;column-gap:var(--s-7);align-items:center}
-  #subscribe-form .form__title,#subscribe-form .form__help{grid-column:1}
-  #subscribe-form .sub__row{grid-column:2;grid-row:1 / span 2}
-  #subscribe-form .form__status{grid-column:1 / -1}
+  .contact__forms{grid-column:1;grid-row:2;margin-top:0}
+  .contact__me{grid-column:2;grid-row:1 / span 2;justify-items:center;gap:var(--s-6)}
+  .contact__social{justify-items:center}
+  .contact__photo{display:block;width:100%;max-width:360px;margin:0}
 }
 .form{display:grid;gap:var(--s-4);padding:var(--s-6);background:var(--surface);border:1px solid var(--line);border-radius:var(--r-card)}
 .form__title{font:600 var(--fs-h3)/1.2 var(--font-display);color:var(--text-strong)}
@@ -739,31 +735,21 @@ body.menu-open{overflow:hidden}
 .check input{flex:none;width:20px;height:20px;margin-top:2px;accent-color:var(--accent)}
 .form__status{min-height:1.4em;font-size:var(--fs-small);color:var(--ok)}
 .form__status.is-error{color:var(--error)}
-/* Contacto en escritorio ancho: 3 columnas de la misma altura para que entre en una sola pantalla.
-   Texto con suscripción | formulario de consulta (campos de a dos) | foto con redes */
-@media (min-width:1280px){
-  #contacto>.container{width:min(100% - 2*var(--gutter),1560px)}
-  .contact__grid{grid-template-columns:4.6fr 4.6fr 3.2fr;grid-template-rows:auto 1fr;column-gap:var(--s-7);row-gap:var(--s-4);align-items:stretch}
-  .contact__info{gap:var(--s-3)}
-  .contact__info .section__title{font-size:clamp(1.75rem,1.4rem + 1.3vw,2.25rem);margin-bottom:0}
-  #subscribe-form{grid-column:1;grid-row:2;align-self:end}
-  #contact-form{grid-column:2;grid-row:1 / span 2;grid-template-columns:1fr 1fr;column-gap:var(--s-3)}
-  /* La foto se estira hasta llenar la columna: así las tres terminan a la misma altura */
-  .contact__me{grid-column:3;grid-row:1 / span 2;display:flex;flex-direction:column}
-  .contact__photo{flex:1 1 auto;min-height:200px;width:calc(100% - 16px);max-width:none}
-  .contact__photo .frame__img{position:absolute;inset:0;height:100%;aspect-ratio:auto;object-position:50% 15%}
-  .form{gap:var(--s-2);padding:var(--s-4)}
-  #contact-form>.form__title,#contact-form>.field:nth-of-type(5),#contact-form>.check,#contact-form>.btn,#contact-form>.form__status{grid-column:1/-1}
-  .form .field{gap:6px}
-  .form .field label{font-size:.6875rem;letter-spacing:.04em}
-  .form .field input,.form .field select{min-height:40px;padding:8px 12px}
-  .form .field textarea{height:72px;min-height:72px;padding:8px 12px}
-}
-/* Celular: el formulario de consulta se abre en una tarjeta emergente desde un botón (main.js, sección 10b mueve el formulario al <dialog>) */
+/* Sin mensaje no ocupa lugar (ni el hueco de la grilla); el aviso sigue siendo una región en vivo y vuelve al flujo al escribir el texto */
+.form__status:empty{position:absolute;min-height:0}
+/* El formulario de consulta se abre en una tarjeta emergente desde un botón, en todos los anchos (main.js, sección 10b mueve el
+   formulario al <dialog>). Sin JS el botón no se ve y el formulario queda en la página */
 .contact__open{display:none}
-@media (max-width:639.98px){.js .contact__open{display:inline-flex}}
+.js .contact__open{display:inline-flex}
 .consulta-dialog__bar{display:flex;justify-content:flex-end;padding:var(--s-3) var(--s-3) 0}
 .consulta-dialog .form{margin:0;padding:var(--s-2) var(--s-5) var(--s-5);border:0;border-radius:0;background:transparent}
+dialog.syn-dialog.consulta-dialog{width:min(92vw,640px)}
+/* Desde 640 px los campos van de a dos: nombre y email, teléfono y motivo; el mensaje, la aceptación y el botón ocupan todo el ancho */
+@media (min-width:640px){
+  .consulta-dialog #contact-form{grid-template-columns:1fr 1fr;column-gap:var(--s-4)}
+  .consulta-dialog #contact-form>.form__title,.consulta-dialog #contact-form>.field:nth-of-type(5),.consulta-dialog #contact-form>.check,
+  .consulta-dialog #contact-form>.btn,.consulta-dialog #contact-form>.form__status{grid-column:1/-1}
+}
 .hp{position:absolute;left:-9999px}
 .sub__row{display:grid;gap:var(--s-3)}
 @media (min-width:640px){.sub__row{grid-template-columns:1fr auto;align-items:start}}

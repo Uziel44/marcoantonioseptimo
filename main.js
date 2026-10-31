@@ -114,6 +114,82 @@
     revealEls.forEach(el => el.classList.add('is-in'));
   }
 
+  /* ───────── 4b. Credenciales: se abren con hover (mouse), o con toque / teclado ───────── */
+  $$('.creds__item').forEach(item => {
+    const btn = $('.creds__btn', item);
+    const set = open => {
+      item.classList.toggle('is-open', open);
+      btn.setAttribute('aria-expanded', String(open));
+    };
+    item.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') set(true); });
+    item.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') set(false); });
+    // El mouse ya abrió con el hover: el click solo actúa con dedo o teclado (pointerType vacío)
+    btn.addEventListener('click', e => { if (e.pointerType !== 'mouse') set(!item.classList.contains('is-open')); });
+  });
+
+  /* ───────── 4c. Fotos de Cursos en celular: 2 filas que se mueven solas (arriba hacia la derecha, abajo hacia la izquierda) ───────── */
+  const photos = $('.photos');
+  if (photos) {
+    const phone = window.matchMedia('(max-width: 639.98px)');
+    const figs = Array.from(photos.children);          // orden original: es el que usa la grilla en tablet y escritorio
+    const build = () => {
+      if (photos.classList.contains('is-marquee')) return;
+      const half = Math.ceil(figs.length / 2);
+      [figs.slice(0, half), figs.slice(half)].forEach((set, n) => {
+        // El video va al final de su fila: así nunca se copia y queda un solo <video> en la página
+        const v = set.findIndex(f => f.classList.contains('photo--video'));
+        const items = v < 0 ? set : set.slice(v + 1).concat(set.slice(0, v + 1));
+        const row = document.createElement('div');
+        const track = document.createElement('div');
+        row.className = 'photos__row';
+        track.className = n ? 'photos__track photos__track--left' : 'photos__track';
+        items.forEach(f => track.appendChild(f));
+        // Copias de las primeras 3 fotos al final de la fila: el recorrido se repite sin saltos
+        items.slice(0, 3).forEach(f => {
+          const copy = f.cloneNode(true);
+          copy.setAttribute('aria-hidden', 'true');
+          copy.inert = true;
+          track.appendChild(copy);
+        });
+        row.appendChild(track);
+        photos.appendChild(row);
+      });
+      photos.classList.add('is-marquee');
+    };
+    const restore = () => {
+      if (!photos.classList.contains('is-marquee')) return;
+      $$('.photo[aria-hidden]', photos).forEach(copy => copy.remove());
+      figs.forEach(f => photos.appendChild(f));
+      $$('.photos__row', photos).forEach(row => row.remove());
+      photos.classList.remove('is-marquee', 'is-paused');
+    };
+    const sync = () => (phone.matches ? build() : restore());
+    sync();
+    phone.addEventListener('change', sync);
+    // Las fotos que arrancan fuera de la fila no entran solas en la carga diferida: al acercarse a la sección se cargan todas
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver((entries, obs) => {
+        if (!entries.some(en => en.isIntersecting)) return;
+        if (photos.classList.contains('is-marquee')) $$('img[loading="lazy"]', photos).forEach(img => { img.loading = 'eager'; });
+        obs.disconnect();
+      }, { rootMargin: '600px 0px' }).observe(photos);
+    }
+
+    // Pausa mientras se toca una fila o se reproduce el video (con el mouse encima o con foco, lo resuelve el CSS)
+    let touching = false, playing = false, resume;
+    const pause = () => photos.classList.toggle('is-paused', touching || playing);
+    photos.addEventListener('pointerdown', () => { clearTimeout(resume); touching = true; pause(); });
+    ['pointerup', 'pointercancel'].forEach(type => photos.addEventListener(type, () => {
+      clearTimeout(resume);
+      resume = setTimeout(() => { touching = false; pause(); }, 1500);
+    }));
+    const video = $('video', photos);
+    if (video) {
+      video.addEventListener('play', () => { playing = true; pause(); });
+      ['pause', 'ended'].forEach(type => video.addEventListener(type, () => { playing = false; pause(); }));
+    }
+  }
+
   /* ───────── 5. Link activo del menú según la sección visible ───────── */
   const links = $$('.nav__link, .menu__link');
   const sections = $$('main section[id]');
@@ -141,16 +217,20 @@
     if (!track || slides.length < 2) return;
 
     const pad = n => String(n).padStart(2, '0');
-    const step = () => slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left;
+    // Galería y libros en celular: grilla de 2x2 que avanza por páginas de 2 columnas (4 tarjetas). En el resto, una tarjeta por vez.
+    const paged = car.matches('.carousel--art, .carousel--books') ? window.matchMedia('(max-width: 639.98px)') : null;
+    const isPaged = () => !!paged && paged.matches;
+    const step = () => (isPaged() ? 2 : 1) * (slides[1].getBoundingClientRect().left - slides[0].getBoundingClientRect().left);
     const go = dir => track.scrollBy({ left: dir * step(), behavior: smooth() });
 
     const update = () => {
       const max = track.scrollWidth - track.clientWidth;
       const x = track.scrollLeft;
+      const total = isPaged() ? Math.ceil(slides.length / 4) : slides.length;
       if (prev) prev.setAttribute('aria-disabled', String(x <= 2));
       if (next) next.setAttribute('aria-disabled', String(x >= max - 2));
       if (bar) bar.style.transform = `scaleX(${max > 0 ? (x + track.clientWidth) / track.scrollWidth : 1})`;
-      if (count) count.textContent = `${pad(Math.min(slides.length, Math.round(x / step()) + 1))} / ${pad(slides.length)}`;
+      if (count) count.textContent = `${pad(Math.min(total, Math.round(x / step()) + 1))} / ${pad(total)}`;
     };
 
     if (prev) prev.addEventListener('click', () => go(-1));
@@ -189,6 +269,17 @@
     dlg.addEventListener('click', e => { if (e.target === dlg || e.target.closest('[data-close]')) dlg.close(); });
   }
 
+  /* ───────── 9b. Sinopsis de los libros en tarjeta emergente (botón data-open="id-del-dialog") ───────── */
+  $$('[data-open]').forEach(btn => btn.addEventListener('click', () => {
+    const d = document.getElementById(btn.dataset.open);
+    if (!d || typeof d.showModal !== 'function') return;
+    d.showModal();
+    d.scrollTop = 0;                                              // el foco inicial cae en "Cerrar" y desplaza al final
+  }));
+  $$('dialog.syn-dialog').forEach(d =>
+    d.addEventListener('click', e => { if (e.target === d || e.target.closest('[data-close]')) d.close(); })
+  );
+
   /* ───────── 10. Formularios (sin backend: el envío se arma por WhatsApp) ───────── */
   const setStatus = (form, msg, isError = false) => {
     const status = $('[role="status"]', form);
@@ -219,6 +310,25 @@
       setStatus(form, 'Listo. Se abrió WhatsApp con tu mensaje para enviarlo.');
       form.reset();
     });
+  }
+
+  /* ───────── 10b. Celular: el formulario de consulta se abre en una tarjeta emergente (botón data-open="consulta-dialog") ───────── */
+  const consultDlg = $('#consulta-dialog');
+  if (form && consultDlg && typeof consultDlg.showModal === 'function') {
+    const slot = form.parentElement;                              // lugar del formulario en la página
+    const holder = $('.consulta-dialog__body', consultDlg);
+    const phone = window.matchMedia('(max-width: 639.98px)');
+    const placeForm = () => {
+      if (phone.matches) {
+        form.classList.add('is-in');                              // dentro del <dialog> cerrado no se dispara el reveal
+        holder.appendChild(form);
+      } else {
+        if (consultDlg.open) consultDlg.close();
+        slot.prepend(form);
+      }
+    };
+    placeForm();
+    phone.addEventListener('change', placeForm);
   }
 
   const sub = $('#subscribe-form');

@@ -120,9 +120,6 @@
         <p class="pill">Institución &amp; Patrimonio Literario</p>
         <h1 id="hero-title">Bienvenido a Raabta.</h1>
         <p class="hero__sub">En Raabta, espacio de conexión entre las almas, no solo hallarás formación profesional para escritores, pinturas y obras de arte a la venta, y libros de autores del siglo XXI, sino también consultoría especializada en propiedad intelectual para proteger tus creaciones.</p>
-        <div class="hero__cta">
-          <a class="btn btn--primary" href="#contacto">Coordinar una consulta</a>
-        </div>
         <blockquote class="hero__quote">
           <p><strong class="hero__rapta">Raabta:</strong> el espacio donde la literatura y el arte conectan almas y trascienden en el tiempo.</p>
         </blockquote>
@@ -135,9 +132,18 @@
     <h2 class="sr-only" id="creds-title">Credenciales</h2>
     <div class="container">
       <ul class="creds__grid" data-stagger>
-        <li class="creds__item"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg>Gestor Cultural</li>
-        <li class="creds__item"><svg class="icon" aria-hidden="true"><use href="#i-feather"/></svg>Presidente Honorario SADE</li>
-        <li class="creds__item"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg>Director de Galería</li>
+        <li class="creds__item">
+          <button class="creds__btn" type="button" aria-expanded="false" aria-controls="cred-gestor"><svg class="icon" aria-hidden="true"><use href="#i-landmark"/></svg><span class="creds__label">Gestor Cultural</span></button>
+          <div class="creds__panel" id="cred-gestor"><div><p>Como gestor cultural, organicé por más de tres años la Feria del Libro Córdoba, el evento cultural más importante de la provincia. Con enfoque federal, sintonicé esta gran celebración con la Feria del Libro Joven y redes de lectura, transformando espacios tradicionales en canales masivos para autores consagrados y emergentes.</p></div></div>
+        </li>
+        <li class="creds__item">
+          <button class="creds__btn" type="button" aria-expanded="false" aria-controls="cred-sade"><svg class="icon" aria-hidden="true"><use href="#i-feather"/></svg><span class="creds__label">Presidente Honorario SADE</span></button>
+          <div class="creds__panel" id="cred-sade"><div><p>Como presidente en los periodos 2024 2026, lideré la modernización de la SADE Córdoba. Enfrenté los desafíos contemporáneos mediante la digitalización de procesos y la incorporación de jóvenes escritores a la asociación. Así, renovamos la representatividad y el dinamismo de nuestra histórica entidad, fortaleciendo el prestigio literario en toda la región.</p></div></div>
+        </li>
+        <li class="creds__item">
+          <button class="creds__btn" type="button" aria-expanded="false" aria-controls="cred-galeria"><svg class="icon" aria-hidden="true"><use href="#i-palette"/></svg><span class="creds__label">Director de Galería</span></button>
+          <div class="creds__panel" id="cred-galeria"><div><p>Como director de galería de arte, expando mi visión curatorial uniendo la plástica y las letras. Me destaco especialmente como curador de la obra del pintor argentino Ricardo Mirolo.</p></div></div>
+        </li>
       </ul>
     </div>
   </section>
@@ -169,10 +175,150 @@
     </div>
   </section>
 
-  <!-- ───────────── LIBROS ───────────── -->
+  
+
+<!-- ───────────── CURSOS Y CHARLAS ───────────── -->
+  <section class="section" id="cursos" aria-labelledby="cursos-title">
+    <div class="container">
+      <div class="section__head reveal">
+        <p class="eyebrow">Cursos y charlas</p>
+        <h2 class="section__title" id="cursos-title">Cursos y charlas</h2>
+        <p class="section__lead section__lead--wide">Escribir se aprende acompañado. En mis cursos trabajo con autores en todas las etapas: quien tiene una idea y no sabe por dónde empezar, quien ya escribió y busca publicar, y quien quiere profesionalizar su camino. También brindo disertaciones y charlas para instituciones y espacios culturales, donde comparto mi experiencia en literatura, gestión cultural y propiedad intelectual. Cada encuentro busca lo mismo: que cada persona descubra su voz y se anime a darla a conocer. Son espacios para conversar, ordenar ideas y llevarse herramientas concretas para seguir escribiendo.</p>
+      </div>
+
+      <!-- Banner de la sección: foto centrada y sin filtros ni transparencia -->
+      <figure class="banner reveal">
+        <img src="img/opt/curso-banner.webp" width="1600" height="900" alt="Marco Antonio Séptimo conversa con un grupo de autores y lectores sentados en ronda, en un salón con mesas de libros" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="courses">
+        <!-- Tarjeta fija: el próximo evento (segundo módulo).
+             La etiqueta «Próxima / Realizada» se actualiza sola según data-date (main.js, bloque 7) -->
+        <aside class="course-feature reveal" data-date="2026-11-21" aria-label="Próximo evento">
+          <img src="img/opt/curso-modulo-2.webp" width="896" height="1200"
+               alt="Flyer del segundo módulo de «El autor como marca»: Dominio escénico y comunicación, sábado 21 de noviembre de 2026, de 10 a 12 hs, en el Hotel Quinto Centenario" loading="lazy" decoding="async">
+          <div class="course-feature__body">
+            <p class="news__meta"><span class="badge" data-when>Próxima</span><span>21 nov 2026 · 10 a 12 hs</span></p>
+            <h3 class="card__title">Segundo módulo: Dominio escénico y comunicación</h3>
+            <p>El autor como marca: liderazgo y oratoria para escritores. Lugar: Hotel Quinto Centenario.</p>
+            <a class="btn btn--primary" data-wa="Hola Marco, quiero reservar mi lugar en el segundo módulo de «El autor como marca» del sábado 21 de noviembre." href="#contacto">Reservá tu lugar</a>
+          </div>
+        </aside>
+
+        <div class="courses__main">
+          <!-- Más eventos: el tercer módulo (próximo) y el primero (evento pasado), en tarjetas chicas -->
+          <div class="events-next">
+            <h3 class="events-next__title reveal">Más eventos</h3>
+            <div class="events-next__grid" data-stagger>
+              <article class="event event--small" data-date="2026-12-05">
+                <img src="img/opt/curso-modulo-3.webp" width="640" height="857"
+                     alt="Flyer del tercer módulo de «El autor como marca»: Liderazgo e influencia cultural, sábado 5 de diciembre de 2026, de 10 a 12 hs, en el Concejo Deliberante" loading="lazy" decoding="async">
+                <div class="event__body">
+                  <p class="news__meta"><span class="badge" data-when>Próxima</span><span>5 dic 2026 · 10 a 12 hs</span></p>
+                  <h4 class="card__title">Tercer módulo: Liderazgo e influencia cultural</h4>
+                  <p>Lugar: Concejo Deliberante.</p>
+                  <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero reservar mi lugar en el tercer módulo de «El autor como marca» del sábado 5 de diciembre." href="#contacto">Reservá tu lugar</a>
+                </div>
+              </article>
+
+              <!-- Evento pasado: la etiqueta es fija (no depende de la fecha) -->
+              <article class="event event--small">
+                <img src="img/opt/curso-flyer.webp" width="900" height="1199"
+                     alt="Flyer del primer módulo de «El autor como marca»: Pitch y marca personal, sábado 31 de octubre de 2026, de 10 a 12 hs, en el Concejo Deliberante" loading="lazy" decoding="async">
+                <div class="event__body">
+                  <p class="news__meta"><span class="badge">Evento pasado</span><span>31 oct 2026 · 10 a 12 hs</span></p>
+                  <h4 class="card__title">Primer módulo: Pitch y marca personal</h4>
+                  <p>Lugar: Concejo Deliberante.</p>
+                </div>
+              </article>
+            </div>
+          </div>
+
+          <div class="photos" data-stagger>
+            <figure class="photo photo--wide">
+              <img src="img/opt/curso-101.webp" width="1280" height="626" alt="Grupo de autores y participantes posando juntos frente a un mural en La Minerita, Espacio Pluricultural" loading="lazy" decoding="async">
+              <figcaption>La Minerita · Espacio Pluricultural</figcaption>
+            </figure>
+            <figure class="photo">
+              <img src="img/opt/curso-103.webp" width="1280" height="720" alt="Cinco personas abrazadas posan juntas frente a un mural colorido" loading="lazy" decoding="async" style="--pos:50% 40%">
+              <figcaption>La Minerita · Espacio Pluricultural</figcaption>
+            </figure>
+            <figure class="photo">
+              <img src="img/opt/curso-104.webp" width="1280" height="720" alt="Grupo de asistentes frente al cartel de la bodega Terra Camiare" loading="lazy" decoding="async">
+              <figcaption>Bodega Terra Camiare</figcaption>
+            </figure>
+            <figure class="photo photo--tall">
+              <img src="img/opt/curso-102.webp" width="800" height="1422" alt="Cinco personas posan juntas frente a un mural colorido y guirnaldas de papel" loading="lazy" decoding="async" style="--pos:50% 80%;--pos-m:50% 45%">
+              <figcaption>La Minerita · Espacio Pluricultural</figcaption>
+            </figure>
+            <figure class="photo photo--tall">
+              <img src="img/opt/curso-105.webp" width="800" height="1422" alt="Grupo de visitantes junto a los grandes tanques de acero de una bodega" loading="lazy" decoding="async" style="--pos:50% 55%;--pos-m:50% 43%">
+              <figcaption>Bodega Terra Camiare</figcaption>
+            </figure>
+            <figure class="photo photo--tall">
+              <img src="img/opt/curso-106.webp" width="800" height="1422" alt="Tres personas posan en una sala de proyección; una de ellas sostiene dos libros" loading="lazy" decoding="async" style="--pos-m:50% 14%">
+            </figure>
+            <figure class="photo photo--tall photo--r4">
+              <img src="img/opt/curso-107.webp" width="800" height="1422" alt="Autores y asistentes posan con sus libros frente a una cortina roja y negra" loading="lazy" decoding="async" style="--pos:50% 40%;--pos-m:50% 36%">
+            </figure>
+            <figure class="photo photo--video">
+              <video controls playsinline preload="none" poster="img/opt/curso-109-poster.webp" aria-label="Video: una asistente hace una pregunta con micrófono durante una charla">
+                <source src="img/opt/curso-109.mp4" type="video/mp4">
+              </video>
+            </figure>
+            <figure class="photo">
+              <img src="img/opt/curso-108.webp" width="1280" height="720" alt="Grupo numeroso posando en un salón; dos personas sostienen un libro" loading="lazy" decoding="async">
+            </figure>
+            <figure class="photo">
+              <img src="img/opt/curso-110.webp" width="1280" height="720" alt="Grupo de lectoras posando en un escenario con libros en la mano, frente a una pantalla con un libro y un dragón ilustrados" loading="lazy" decoding="async">
+            </figure>
+          </div>
+
+          <p class="courses__cta">Consultá fechas y modalidades, o invitame a tu institución.</p>
+        </div>
+      </div>
+
+      <!-- Niveles de cursos: fila horizontal al final de la sección, debajo de la tarjeta fija y de las fotos.
+           Estructura tentativa armada con frases del texto aprobado: confirmar con el cliente cómo se ordenan los cursos reales -->
+      <div class="levels" data-stagger>
+        <article class="card card--sm">
+          <p class="path__num">01</p>
+          <h3 class="card__title">Empezar</h3>
+          <p>Para quien tiene una idea y no sabe por dónde empezar.</p>
+          <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
+          <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para empezar a escribir." href="#contacto">Consultar fechas y modalidades</a>
+        </article>
+        <article class="card card--sm">
+          <p class="path__num">02</p>
+          <h3 class="card__title">Publicar</h3>
+          <p>Para quien ya escribió y busca publicar.</p>
+          <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
+          <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para publicar mi obra." href="#contacto">Consultar fechas y modalidades</a>
+        </article>
+        <article class="card card--sm">
+          <p class="path__num">03</p>
+          <h3 class="card__title">Profesionalizar</h3>
+          <p>Para quien quiere profesionalizar su camino.</p>
+          <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
+          <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para profesionalizar mi camino como autor." href="#contacto">Consultar fechas y modalidades</a>
+        </article>
+        <article class="card card--sm">
+          <p class="path__num">04</p>
+          <h3 class="card__title">Charlas y disertaciones</h3>
+          <p>Para instituciones y espacios culturales: experiencia en literatura, gestión cultural y propiedad intelectual.</p>
+          <p class="ph ph--line">[Temas · modalidad · zona de alcance]</p>
+          <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quisiera invitarte a dar una charla en mi institución. ¿Lo conversamos?" href="#contacto">Invitame a tu institución</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+<!-- ───────────── LIBROS ───────────── -->
   <section class="section section--band" id="libros" aria-labelledby="libros-title">
+    <!-- Cabecera + obra destacada: la foto es el fondo de este bloque, entera -->
+    <div class="books-top">
+    <img class="books-bg" src="img/opt/libros-banner.webp" width="1452" height="1556" alt="" decoding="async">
     <div class="books-hero reveal">
-      <img src="img/opt/libros-banner.webp" width="1452" height="1556" alt="" loading="lazy" decoding="async">
       <div class="books-hero__copy container">
           <p class="eyebrow">Libros</p>
           <h2 class="section__title" id="libros-title">Libros</h2>
@@ -184,180 +330,221 @@
     <div class="container">
       <div class="saga">
         <div class="saga__stage reveal">
-          <img src="img/opt/libro-saga.webp" width="700" height="1105"
-               alt="Portada de la edición reunida de la «Saga La Inefable», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          <img src="img/opt/libro-comisaria.webp" width="333" height="500"
+               alt="Portada de «La Comisaria Alonso: por la justicia social y de género», de Marco Antonio Séptimo" loading="lazy" decoding="async">
         </div>
         <div class="saga__text reveal">
           <p class="eyebrow">Obra destacada</p>
-          <h3 class="saga__title">Saga La Inefable</h3>
-          <p>Novela negra en tres tomos: acción, intriga y violencia urbana, de género e institucional.</p>
-          
+          <h3 class="saga__title">La Comisaria Alonso</h3>
+          <p class="book__sub">Por la justicia social y de género</p>
+          <p class="saga__blurb">En La Comisaria Alonso, la detective Verónica Alonso asume la seguridad de las serranías de Córdoba y busca revertir años de descrédito policial ante la creciente violencia urbana. La muerte de un líder sindical desafía su capacidad en un rol históricamente masculino. Una novela que reivindica a la mujer policía.</p>
+          <div class="book__actions">
+            <a class="btn btn--primary" href="https://www.amazon.com/-/es/COMISARIA-ALONSO-JUSTICIA-SOCIAL-Spanish/dp/9874003324" target="_blank" rel="noopener noreferrer">Comprar en Amazon</a>
+            <button class="btn btn--ghost btn--sm" type="button" data-open="syn-comisaria" aria-haspopup="dialog">Sinopsis</button>
+            <button class="btn btn--ghost btn--sm" type="button" data-zoom="img/opt/libro-comisaria-contratapa.webp" data-alt="Contratapa de «La Comisaria Alonso», con la sinopsis y el código de barras" data-caption="Contratapa · La Comisaria Alonso">Contratapa</button>
+          </div>
         </div>
       </div>
     </div>
+    </div>
 
-    <!-- El carrusel de libros va fuera de .container para que sangre a los costados en móvil -->
-    <div class="carousel carousel--books reveal" data-carousel role="region" aria-roledescription="carrusel" aria-label="Los tres tomos de La Inefable">
-        <div class="carousel__track" data-track tabindex="0">
-          <article class="carousel__slide book" data-slide>
-            <div class="book__stage">
-              <img class="book__cover" src="img/opt/libro-t1.webp" width="287" height="455"
-                   alt="Portada de «La Inefable. De guía turística a mujer policía», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+    <!-- Grilla de libros compacta: 6 columnas en escritorio ancho (2 filas). Para sumar un libro, copiar un <article class="book"> y su <dialog class="syn-dialog"> -->
+    <div class="books-wrap carousel--books" data-carousel>
+      <div class="books-grid" data-track data-stagger>
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-inefable-1.webp" width="480" height="755"
+                 alt="Portada de «La Inefable: De operadora turística a mujer policía», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Tomo 1</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">De operadora turística a mujer policía</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" data-wa="Hola Marco, quiero conseguir «La Inefable» (Tomo 1: De operadora turística a mujer policía). ¿Cómo puedo comprarlo?" href="#contacto" aria-label="Conseguir este libro">Conseguir</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-t1" aria-haspopup="dialog">Sinopsis</button>
             </div>
-            <div class="book__body">
-              <p class="book__vol">Tomo 1</p>
-              <h3 class="book__title">La Inefable</h3>
-              <p class="book__sub">De guía turística a mujer policía</p>
-              <p class="book__meta"><span class="ph">[Año]</span> · <span class="ph">[Editorial]</span></p>
-              <div class="book__actions">
-                <a class="btn btn--primary btn--sm" data-wa="Hola Marco, quiero conseguir «La Inefable» (Tomo 1: De guía turística a mujer policía). ¿Cómo puedo comprarlo?" href="#contacto">Conseguir este libro</a>
-              </div>
-              <details class="book__more">
-                <summary>Leer sinopsis</summary>
-                <p class="ph">[Sinopsis del Tomo 1: 2 a 3 líneas, a confirmar con el cliente]</p>
-              </details>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="carousel__slide book" data-slide>
-            <div class="book__stage">
-              <img class="book__cover" src="img/opt/libro-t2.webp" width="251" height="401"
-                   alt="Portada de «La Inefable. Tras los pasos de un asesino citadino», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-final-paradigma.webp" width="480" height="762"
+                 alt="Portada de «La Inefable: El final de un paradigma», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela negra</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">El final de un paradigma</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/MARCO-ANTONIO-SEPTIMO-ebook/dp/B0C21QQT42" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-final-paradigma" aria-haspopup="dialog">Sinopsis</button>
             </div>
-            <div class="book__body">
-              <p class="book__vol">Tomo 2</p>
-              <h3 class="book__title">La Inefable</h3>
-              <p class="book__sub">Tras los pasos de un asesino citadino</p>
-              <p class="book__meta"><span class="ph">[Año]</span> · <span class="ph">[Editorial]</span></p>
-              <div class="book__actions">
-                <a class="btn btn--primary btn--sm" data-wa="Hola Marco, quiero conseguir «La Inefable» (Tomo 2: Tras los pasos de un asesino citadino). ¿Cómo puedo comprarlo?" href="#contacto">Conseguir este libro</a>
-              </div>
-              <details class="book__more">
-                <summary>Leer sinopsis</summary>
-                <p class="ph">[Sinopsis del Tomo 2: 2 a 3 líneas, a confirmar con el cliente]</p>
-              </details>
-            </div>
-          </article>
+          </div>
+        </article>
 
-          <article class="carousel__slide book" data-slide>
-            <div class="book__stage">
-              <img class="book__cover" src="img/opt/libro-t3.webp" width="422" height="632"
-                   alt="Portada de «La Inefable. Desapariciones y muerte en las altas cumbres», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-inefable-2.webp" width="480" height="759"
+                 alt="Portada de «La Inefable: Tras los pasos de un delincuente citadino», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Tomo 2</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">Tras los pasos de un delincuente citadino</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B092MW3VM2" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-t2" aria-haspopup="dialog">Sinopsis</button>
             </div>
-            <div class="book__body">
-              <p class="book__vol">Tomo 3</p>
-              <h3 class="book__title">La Inefable</h3>
-              <p class="book__sub">Desapariciones y muerte en las altas cumbres</p>
-              <p class="book__meta"><span class="ph">[Año]</span> · <span class="ph">[Editorial]</span></p>
-              <div class="book__actions">
-                <a class="btn btn--primary btn--sm" data-wa="Hola Marco, quiero conseguir «La Inefable» (Tomo 3: Desapariciones y muerte en las altas cumbres). ¿Cómo puedo comprarlo?" href="#contacto">Conseguir este libro</a>
-              </div>
-              <details class="book__more">
-                <summary>Leer sinopsis</summary>
-                <p class="ph">[Sinopsis del Tomo 3: 2 a 3 líneas, a confirmar con el cliente]</p>
-              </details>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-al-calor-justicia.webp" width="480" height="766"
+                 alt="Portada de «La Inefable: Al calor de la justicia», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela negra</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">Al calor de la justicia</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B0BRVDNZN1" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-al-calor" aria-haspopup="dialog">Sinopsis</button>
             </div>
-          </article>
-        </div>
-        <div class="carousel__ui">
-          <div class="carousel__progress" aria-hidden="true"><span class="carousel__bar" data-bar></span></div>
-          <span class="carousel__count" data-count aria-hidden="true">01 / 03</span>
-          <button class="arrow" type="button" data-prev aria-label="Libro anterior"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
-          <button class="arrow" type="button" data-next aria-label="Libro siguiente"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
-        </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-sombra-leyes.webp" width="480" height="768"
+                 alt="Portada de «La Inefable: A la sombra de las leyes… Santa Fe», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela negra</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">A la sombra de las leyes… Santa Fe</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B0B2FGW8GZ" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-sombra-leyes" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-deidad-olimpo.webp" width="480" height="766"
+                 alt="Portada de «La Inefable: La Deidad del Olimpo», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela negra</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">La Deidad del Olimpo</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B09RQ4NPVN" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-deidad" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-inefable-3.webp" width="480" height="700"
+                 alt="Portada de «La Inefable: Desapariciones y muerte en las altas cumbres», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Tomo 3</p>
+            <h3 class="book__title">La Inefable</h3>
+            <p class="book__sub">Desapariciones y muerte en las altas cumbres</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B092MWZJZ5" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-t3" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-amor-covid.webp" width="480" height="766"
+                 alt="Portada de «Amor en tiempos del Covid 19», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela romántica</p>
+            <h3 class="book__title">Amor en tiempos del Covid 19</h3>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B098448V2P" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-amor-covid" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-codice-tagarnas.webp" width="480" height="766"
+                 alt="Portada de «El Códice de los Tagarnas: Sapere aude», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Novela</p>
+            <h3 class="book__title">El Códice de los Tagarnas</h3>
+            <p class="book__sub">Sapere aude</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-Septimo-ebook/dp/B09LDGBLFP" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-codice" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-pandemic.webp" width="480" height="766"
+                 alt="Portada de «Pandemic Hyperconnected: Guardians of Nature», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Edición en inglés</p>
+            <h3 class="book__title" lang="en">Pandemic Hyperconnected</h3>
+            <p class="book__sub" lang="en">Guardians of Nature</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-Septimo-ebook/dp/B0BBMWNV8S" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-pandemic" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="book" data-slide>
+          <div class="book__stage">
+            <img class="book__cover" src="img/opt/libro-pandemials.webp" width="480" height="766"
+                 alt="Portada de «Pandemials: Hiperconectados», de Marco Antonio Séptimo" loading="lazy" decoding="async">
+          </div>
+          <div class="book__body">
+            <p class="book__vol">Edición en español</p>
+            <h3 class="book__title">Pandemials</h3>
+            <p class="book__sub">Hiperconectados</p>
+            <div class="book__actions">
+              <a class="btn btn--primary btn--sm" href="https://www.amazon.com/-/es/Marco-Antonio-S%C3%A9ptimo-ebook/dp/B096T38SPQ" target="_blank" rel="noopener noreferrer" aria-label="Comprar en Amazon">Comprar</a>
+              <button class="btn btn--ghost btn--sm" type="button" data-open="syn-pandemials" aria-haspopup="dialog">Sinopsis</button>
+            </div>
+          </div>
+        </article>
       </div>
-  </section>
-
-  <!-- ───────────── CURSOS Y CHARLAS ───────────── -->
-  <section class="section" id="cursos" aria-labelledby="cursos-title">
-    <div class="container">
-      <div class="section__head reveal">
-        <p class="eyebrow">Cursos y charlas</p>
-        <h2 class="section__title" id="cursos-title">Cursos y charlas</h2>
-        <p class="section__lead section__lead--wide">Escribir se aprende acompañado. En mis cursos trabajo con autores en todas las etapas: quien tiene una idea y no sabe por dónde empezar, quien ya escribió y busca publicar, y quien quiere profesionalizar su camino. También brindo disertaciones y charlas para instituciones y espacios culturales, donde comparto mi experiencia en literatura, gestión cultural y propiedad intelectual. Cada encuentro busca lo mismo: que cada persona descubra su voz y se anime a darla a conocer. Son espacios para conversar, ordenar ideas y llevarse herramientas concretas para seguir escribiendo.</p>
-      </div>
-
-      <div class="courses">
-        <aside class="course-feature reveal" data-date="2026-10-31" aria-label="Próximo curso">
-          <img src="img/opt/curso-flyer.webp" width="900" height="1199"
-               alt="Flyer del curso «El autor como marca: liderazgo y oratoria para escritores», sábado 31 de octubre de 2026, de 10 a 12 hs, en el Concejo Deliberante" loading="lazy" decoding="async">
-          <div class="course-feature__body">
-            <p class="news__meta"><span class="badge" data-when>Próxima</span><span>31 oct 2026 · 10 a 12 hs</span></p>
-            <h3 class="card__title">El autor como marca</h3>
-            <p>Liderazgo y oratoria para escritores. Primer módulo: Pitch y marca personal. Lugar: Concejo Deliberante.</p>
-            <a class="btn btn--primary" data-wa="Hola Marco, quiero reservar mi lugar en el curso «El autor como marca» del sábado 31 de octubre." href="#contacto">Reservá tu lugar</a>
-          </div>
-        </aside>
-
-        <div class="courses__main">
-          <!-- Estructura tentativa armada con frases del texto aprobado: confirmar con el cliente cómo se ordenan los cursos reales -->
-          <div class="levels" data-stagger>
-            <article class="card card--sm">
-              <p class="path__num">01</p>
-              <h3 class="card__title">Empezar</h3>
-              <p>Para quien tiene una idea y no sabe por dónde empezar.</p>
-              <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
-              <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para empezar a escribir." href="#contacto">Consultar fechas y modalidades</a>
-            </article>
-            <article class="card card--sm">
-              <p class="path__num">02</p>
-              <h3 class="card__title">Publicar</h3>
-              <p>Para quien ya escribió y busca publicar.</p>
-              <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
-              <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para publicar mi obra." href="#contacto">Consultar fechas y modalidades</a>
-            </article>
-            <article class="card card--sm">
-              <p class="path__num">03</p>
-              <h3 class="card__title">Profesionalizar</h3>
-              <p>Para quien quiere profesionalizar su camino.</p>
-              <p class="ph ph--line">[Modalidad · fecha · duración · cupo · valor]</p>
-              <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quiero consultar fechas y modalidades del curso para profesionalizar mi camino como autor." href="#contacto">Consultar fechas y modalidades</a>
-            </article>
-            <article class="card card--sm">
-              <p class="path__num">04</p>
-              <h3 class="card__title">Charlas y disertaciones</h3>
-              <p>Para instituciones y espacios culturales: experiencia en literatura, gestión cultural y propiedad intelectual.</p>
-              <p class="ph ph--line">[Temas · modalidad · zona de alcance]</p>
-              <a class="btn btn--ghost btn--sm" data-wa="Hola Marco, quisiera invitarte a dar una charla en mi institución. ¿Lo conversamos?" href="#contacto">Invitame a tu institución</a>
-            </article>
-          </div>
-
-          <div class="photos" data-stagger>
-            <figure class="photo photo--wide">
-              <img src="img/opt/curso-1.webp" width="1280" height="643" alt="Marco Antonio Séptimo junto a un grupo de participantes en una sala de conferencias" loading="lazy" decoding="async" style="object-position:50% 40%">
-              <figcaption><span class="ph">[Lugar · año]</span></figcaption>
-            </figure>
-            <figure class="photo">
-              <img src="img/opt/curso-2.webp" width="1280" height="720" alt="Taller con participantes sentados alrededor de una mesa de madera" loading="lazy" decoding="async" style="object-position:50% 45%">
-              <figcaption><span class="ph">[Lugar · año]</span></figcaption>
-            </figure>
-            <figure class="photo">
-              <img src="img/opt/curso-3.webp" width="1280" height="721" alt="Grupo reunido en la presentación de una antología" loading="lazy" decoding="async">
-              <figcaption><span class="ph">[Lugar · año]</span></figcaption>
-            </figure>
-            <figure class="photo">
-              <img src="img/opt/curso-4.webp" width="1280" height="657" alt="Participantes de un encuentro literario en una biblioteca" loading="lazy" decoding="async" style="object-position:50% 40%">
-              <figcaption><span class="ph">[Lugar · año]</span></figcaption>
-            </figure>
-            <figure class="photo">
-              <img src="img/opt/curso-5.webp" width="1280" height="720" alt="Charla al aire libre en una plaza, con una mesa de libros y micrófono" loading="lazy" decoding="async" style="object-position:40% 50%">
-              <figcaption><span class="ph">[Lugar · año]</span></figcaption>
-            </figure>
-          </div>
-
-          <p class="courses__cta">Consultá fechas y modalidades, o invitame a tu institución.</p>
-        </div>
+      <!-- Celular: la grilla se desliza en horizontal, 2x2 por página (main.js, bloque 6). En el resto de los anchos estos controles no se ven -->
+      <div class="carousel__ui">
+        <div class="carousel__progress" aria-hidden="true"><span class="carousel__bar" data-bar></span></div>
+        <span class="carousel__count" data-count aria-hidden="true">01 / 03</span>
+        <button class="arrow" type="button" data-prev aria-label="Libros anteriores"><svg class="icon" aria-hidden="true"><use href="#i-prev"/></svg></button>
+        <button class="arrow" type="button" data-next aria-label="Libros siguientes"><svg class="icon" aria-hidden="true"><use href="#i-next"/></svg></button>
       </div>
     </div>
   </section>
+
+  
 
   <!-- ───────────── SERVICIOS / PROPIEDAD INTELECTUAL ───────────── -->
   <section class="section section--band" id="servicios" aria-labelledby="servicios-title">
     <div class="container">
       <div class="services__intro">
         <figure class="frame reveal">
-          <img class="frame__img" src="img/opt/servicios.webp" width="900" height="1350"
-               alt="Marco Antonio Séptimo sosteniendo una carpeta de documentos" loading="lazy" decoding="async">
+          <img class="frame__img" src="img/opt/servicios-sentado.webp" width="900" height="1350"
+               alt="Marco Antonio Séptimo sentado en un taburete, con camisa blanca y jeans" loading="lazy" decoding="async">
         </figure>
         <div class="reveal">
           <p class="eyebrow">Servicios</p>
@@ -411,7 +598,7 @@
 
     <!-- Las 6 obras son imágenes de banco libre, PROVISORIAS (ver img/stock/CREDITOS.md).
          Reemplazar por las obras reales de la galería: título, artista, técnica, medidas y estado. -->
-    <div class="carousel reveal" data-carousel role="region" aria-roledescription="carrusel" aria-label="Galería de obras">
+    <div class="carousel carousel--art reveal" data-carousel role="region" aria-roledescription="carrusel" aria-label="Galería de obras">
       <div class="carousel__track" data-track tabindex="0">
         <article class="carousel__slide art" data-slide>
           <div class="art__media">
@@ -521,7 +708,7 @@
 
         <article class="carousel__slide news" data-slide data-date="2026-10-02">
           <div class="news__media">
-            <img src="img2/1.1.jpeg" width="1200" height="587" alt="Marco Antonio Séptimo junto a los asistentes al Sunset literario, frente al mural de La Minerita, Unquillo" loading="lazy" decoding="async" style="object-position:55% 50%">
+            <img src="img/opt/novedad-minerita-grupo.webp" width="1200" height="587" alt="Marco Antonio Séptimo junto a los asistentes al Sunset literario, frente al mural de La Minerita, Unquillo" loading="lazy" decoding="async" style="object-position:55% 50%">
           </div>
           <div class="news__body">
             <p class="news__meta"><span class="badge" data-when>Realizada</span><span>2 oct 2026</span></p>
@@ -614,32 +801,30 @@
           <p class="eyebrow">Contacto</p>
           <h2 class="section__title" id="contacto-title">Dá el primer paso hacia tu proyecto.</h2>
           <p>¿Tenés una obra en marcha, querés desarrollar tu marca de autor o necesitás proteger tus derechos de propiedad intelectual? Ponete en contacto directo para coordinar una consulta o suscribite para recibir contenidos y novedades exclusivas.</p>
+          <!-- Celular: el formulario de consulta se abre en una tarjeta emergente (main.js, sección 10b) -->
+          <button class="btn btn--primary contact__open" type="button" data-open="consulta-dialog">Llenar el formulario de consulta</button>
+        </div>
 
-          <p class="contact__wa"><a class="btn btn--primary" data-wa="Hola Marco, te escribo desde tu web. Me gustaría coordinar una consulta." href="#contacto"><svg class="icon icon--fill" aria-hidden="true"><use href="#i-wa"/></svg> Escribime por WhatsApp</a></p>
-          <p class="contact__note"><span class="ph">Respondo en [tiempo de respuesta].</span></p>
-
-          <ul class="contact__list">
-            <li><svg class="icon" aria-hidden="true"><use href="#i-wa"/></svg><span data-wa-label class="ph">[WhatsApp: +54 9 351 XXX XXXX]</span></li>
-            <li><svg class="icon" aria-hidden="true"><use href="#i-mail"/></svg><a data-email class="ph" href="#contacto">[Email de contacto]</a></li>
-            </ul>
-
-          <p class="contact__social-title">Seguime en redes</p>
-          <div class="socials">
-            <a href="https://www.facebook.com/marcoantonio.septimo.3/" target="_blank" rel="noopener" aria-label="Facebook de Marco Antonio Séptimo"><svg class="icon" aria-hidden="true"><use href="#i-fb"/></svg></a>
-            <a href="https://www.instagram.com/marcoantonioseptimo/" target="_blank" rel="noopener" aria-label="Instagram @marcoantonioseptimo"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
-            <a href="https://www.instagram.com/marcoantonioseptimo.ok/" target="_blank" rel="noopener" aria-label="Instagram @marcoantonioseptimo.ok"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
-            <a href="https://www.instagram.com/septimoescritoresdelsiglo21ok/" target="_blank" rel="noopener" aria-label="Instagram @septimoescritoresdelsiglo21ok"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
-          </div>
-
+        <!-- Foto y redes: en escritorio ocupan la tercera columna -->
+        <div class="contact__me reveal">
           <figure class="frame contact__photo">
             <img class="frame__img" src="img/opt/contacto.webp" width="897" height="1345"
                  alt="Marco Antonio Séptimo, retrato de estudio" loading="lazy" decoding="async">
           </figure>
+          <div class="contact__social">
+            <p class="contact__social-title">Seguime en redes</p>
+            <div class="socials">
+              <a href="https://www.facebook.com/marcoantonio.septimo.3/" target="_blank" rel="noopener" aria-label="Facebook de Marco Antonio Séptimo"><svg class="icon" aria-hidden="true"><use href="#i-fb"/></svg></a>
+              <a href="https://www.instagram.com/marcoantonioseptimo/" target="_blank" rel="noopener" aria-label="Instagram @marcoantonioseptimo"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
+              <a href="https://www.instagram.com/marcoantonioseptimo.ok/" target="_blank" rel="noopener" aria-label="Instagram @marcoantonioseptimo.ok"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
+              <a href="https://www.instagram.com/septimoescritoresdelsiglo21ok/" target="_blank" rel="noopener" aria-label="Instagram @septimoescritoresdelsiglo21ok"><svg class="icon" aria-hidden="true"><use href="#i-ig"/></svg></a>
+            </div>
+          </div>
         </div>
 
-        <div class="contact__forms reveal">
+        <div class="contact__forms">
           <!-- Sin backend: el envío abre WhatsApp con el mensaje armado (ver main.js, sección 10). -->
-          <form class="form" id="contact-form" novalidate>
+          <form class="form reveal" id="contact-form" novalidate>
             <h3 class="form__title">Coordinar una consulta</h3>
             <div class="field">
               <label for="f-nombre">Nombre y apellido</label>
@@ -680,7 +865,7 @@
             <p class="form__status" role="status" aria-live="polite"></p>
           </form>
 
-          <form class="form form--sub" id="subscribe-form" novalidate>
+          <form class="form form--sub reveal" id="subscribe-form" novalidate>
             <h3 class="form__title">Recibí contenidos y novedades</h3>
             <p class="form__help">Contenidos y novedades exclusivas, directo a tu correo. Podés darte de baja cuando quieras.</p>
             <div class="sub__row">
@@ -719,7 +904,7 @@
         <li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
-    <div>
+    <div class="footer__contact">
       <p class="footer__title">Contacto</p>
       <ul class="footer__list">
         <li><span data-wa-label class="ph">[WhatsApp: +54 9 351 XXX XXXX]</span></li>
@@ -745,6 +930,202 @@
     <figcaption></figcaption>
   </figure>
   <button class="btn btn--ghost btn--sm lightbox__close" type="button" data-close>Cerrar</button>
+</dialog>
+
+<!-- Formulario de consulta en tarjeta emergente (solo celular): main.js, sección 10b, mueve acá el formulario #contact-form -->
+<dialog class="syn-dialog consulta-dialog" id="consulta-dialog" aria-label="Formulario de consulta">
+  <div class="consulta-dialog__bar">
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+  </div>
+  <div class="consulta-dialog__body"></div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-comisaria" aria-labelledby="syn-comisaria-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-comisaria.webp" width="333" height="500" alt="Portada de «La Comisaria Alonso: por la justicia social y de género», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-comisaria-title">La Comisaria Alonso</h3>
+    <p class="book__sub">Por la justicia social y de género</p>
+    <p>La destacada labor policial de la comisaria detective Verónica Alonso, en búsqueda de un menor desaparecido del seno de un hogar, de una familia cordobesa, será su carta de presentación, como máxima responsable de la seguridad pública en las serranías de la provincia de Córdoba, Argentina, en la cual el conflicto social se acrecienta día a día, con una marcada violencia urbana.</p>
+    <p>Su gestión liderando un grupo de policías, cuyo descrédito social de muchos años, deberá revertir, con cambios profundos, demostrando templanza, aplomo, firmeza en la toma de decisiones.</p>
+    <p>La sorprendente muerte de un líder sindical, ocasionará una profunda problemática político social, que pondrá a prueba sus capacidades profesionales, en desarrollo de un rol, que históricamente ha sido desempeñado por hombres, pero eso, no será un obstáculo para esta joven oficial jefa de la Policía, cuyo valor y entrega, quedaran demostrados en cada decisión que tome, soportando presiones de la sociedad misma, del gobierno y de sus propios superiores.</p>
+    <p>Una novela policial atrapante, que reivindica el rol de la mujer en las fuerzas policiales, como parte de una sociedad, en la cual reclama su merecido espacio, luchando y aunando fuerzas contra los delitos que se comenten en perjuicio de su género como el femicidio, en el contexto de un país atestado de este tipo de delitos que incrementan las cifras de las estadísticas delictuales, en una sociedad enferma.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-t1" aria-labelledby="syn-t1-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-inefable-1.webp" width="480" height="755" alt="Portada de «La Inefable: De operadora turística a mujer policía», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-t1-title">La Inefable</h3>
+    <p class="book__sub">De operadora turística a mujer policía</p>
+    <p>Una historia de amor y venganza que te hará evadir de la realidad. Te preguntaste alguna vez ¿Qué estarías dispuesto a hacer, si matan a tu mejor amiga?</p>
+    <p>Esta es la historia de Verónica, una operadora turística argentina, quien mantenía una vida normal, hasta que en circunstancias en que se encontraba en Estambul Turquía, recibe la triste noticia de que había muerto su amiga de la infancia en manos de delincuentes en una ciudad de Sudamérica, donde la sociedad se encontraba atemorizada por el accionar delictivo. La impunidad con a que mataron a Fabiana, hace reaccionar a la protagonista de esta historia, cuestionando a todas las instituciones del Estado que directa e indirectamente tenían responsabilidad en tan luctuoso acontecimiento y decide involucrarse ingresando a las filas policiales.</p>
+    <p>Tras varios años de esfuerzos y sacrificios, logra acceder a las máximas jerarquías dentro de la institución y comienza una meteórica carrera, con un solo objetivo: generar cambios institucionales y sociales para que nadie tenga que sufrir lo que ella soportó por la pérdida de su amiga Fabiana cuyo caso quede impune.</p>
+    <p>Los delitos que investigará te mantendrán expectante desde el inicio al final de cada capítulo de esta primera entrega, con intriga, suspenso y mucha acción, porque la inefable es una mujer que no parará hasta lograr lo que se propuso.</p>
+    <p>En medio de tanta acción, surgirá también el amor, que dejará expuesto el lado más sensible de la actora principal de esta novela negra, a quienes comienzan a conocerla publicamente como una persona difícil de clasificar, explicar o justificar, por su inestimable compromiso social.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-t2" aria-labelledby="syn-t2-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-inefable-2.webp" width="480" height="759" alt="Portada de «La Inefable: Tras los pasos de un delincuente citadino», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-t2-title">La Inefable</h3>
+    <p class="book__sub">Tras los pasos de un delincuente citadino</p>
+    <p>El asesinato violento de dos hombres en diferentes puntos de una ciudad mediterránea de Sudamérica, despierta el interés de la prensa local y la noticia trasciende las fronteras provinciales, por el ensañamiento que se ha evidenciado en los cuerpos de las victimas. La ciudad ya no será la misma y el miedo se apodera de las personas, quienes reclaman mayor protección a las autoridades gubernamentales.</p>
+    <p>La inefable será una actora principal en la resolución de esta problemática social, lo cual provocará celos profesionales, en el seno de una institución policial con una cadena de mando verticalista, con un marcado desgaste, generándose incluso violencia de género en su perjuicio, pero eso no la detendrá para poner en practica aquellas virtudes esenciales para las relaciones humanas y el orden social, como la prudencia, la justicia, la fortaleza y la templanza, en cada una de sus acciones, con un único fin de llegar hasta el asesino que mantiene en vilo a la ciudad.</p>
+    <p>Como nos tiene acostumbrados esta mujer policía, ella no descansara hasta poner tras las rejas al responsable o a los responsables de tan horrendos crímenes.</p>
+    <p>Acción, intriga y suspenso hasta el final de esta novela negra, que te mantendrá aliado/a de esta joven y bella mujer, empeñada en generar cambios institucionales y sociales a la medida de su alcance, por una convivencia en paz, procurando con incansable trabajo honrar la memoria de su amiga de la infancia injustamente asesinada y que dio origen a su vertiginosa carrera policial.</p>
+    <p>En medio de tanto odio, traiciones, dolor y venganza, también existe el tiempo para el amor y en esta entrega, la segunda de la serie “LA INEFABLE”, se consolida el amor de Verónica por una persona también responsable de la seguridad publica al igual que ella, Julio Cesar, quien le ha demostrado un sólido amor en libertad y su interés en construir una relación estable, por la cual ambos se comprometen a estar juntos a pesar de las adversidades que su profesión les presenta día a día.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-t3" aria-labelledby="syn-t3-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-inefable-3.webp" width="480" height="700" alt="Portada de «La Inefable: Desapariciones y muerte en las altas cumbres», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-t3-title">La Inefable</h3>
+    <p class="book__sub">Desapariciones y muerte en las altas cumbres</p>
+    <p>Pocas veces en la historia de una provincia han recaído sobre una sola mujer tantas responsabilidades. La comisaria detective Verónica Alonso surgió después de un triste desenlace que termino con la muerte de su amiga de la infancia en manos de delincuentes, para honrar su memoria y generar cambios en un sistema judicial burocrático y perverso que le brinda impunidad a quienes sienten desprecio por la vida.</p>
+    <p>Que una joven mujer, sin familiares policías, y ferviente defensora de los derechos humanos, lograra triunfar en una carrera policial, convirtiéndose rápidamente en jefa en una institución que históricamente fue gestionada por hombres, parecía imposible. Sin embargo, ocurrió, gracias a que miles de personas, entendieron su profesionalidad, sacrificio y compromiso social demostrado en cada acto llevado a cabo en el ejercicio de su función asignada.</p>
+    <p>En esta nueva y última entrega de la trilogía, el autor nos atrapara y dejara pasmados en cada capítulo donde la acción, el suspenso, la intriga y la violencia serán protagonistas de esta obra, con la descripción de escenarios únicos en los que la detective será la encargada de resolver cada problemática social que se le presenta en su labor diaria. Intervendrá en hechos de violencia de genero con delitos gravísimos en perjuicios de menores, inundaciones como consecuencia de la furia de la naturaleza, con pérdidas de vidas humanas y materiales, y además en cuestiones internas en la fuerza policial a la cual pertenece.</p>
+    <p>Finalmente, la inefable será la encargada de investigar y develar el misterio que se ha apoderado de las altas cumbres, donde comienzan a desaparecer mujeres sin que nadie pueda saber las causas de su origen, ante la indiferencia de una sociedad adormecida, que no reacciona ante tan grave situación, quizás sea este el hecho más importante de su carrera policial, donde lo arriesgara todo por lograr su esclarecimiento, solicitando la ayuda del ya conocido por los lectores de las primeras entregas de la saga, el suboficial principal retirado Rafael Constantino.</p>
+    <p>Acción, suspenso, intriga hasta el final de esta novela negra, que te dejara sin aliento.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-final-paradigma" aria-labelledby="syn-final-paradigma-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-final-paradigma.webp" width="480" height="762" alt="Portada de «La Inefable: El final de un paradigma», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-final-paradigma-title">La Inefable</h3>
+    <p class="book__sub">El final de un paradigma</p>
+    <p>La incansable labor de la jefa de policía de la provincia mediterránea de Córdoba, Argentina en pos de salvaguardar la vida, los derechos de las personas, y sus bienes, recibirá su reconocimiento social, e institucional tardíamente en una sociedad enferma, carente de empatía, y de sensibilidad con los integrantes de esa misma sociedad que deciden abrazar una vida de servicio.</p>
+    <p>La demora en la toma de decisiones para torcer el rumbo en el destino en materia de seguridad pública de una provincia cuyos habitantes se acostumbraron a un paradigma de seguridad perverso, llevara a que ella misma, como funcionaria pública, sea víctima de esa misma violencia.</p>
+    <p>Quizás las personas nos hemos acostumbrados a tanta violencia y a generar cambios cuando ya es demasiado tarde, pensando en que nunca nos sucederá a nosotros, ni a nuestros seres queridos.</p>
+    <p>El autor, como nos tiene acostumbrados, a través de esta novela negra nos adentrara a lo más íntimo de una institución policial que sangra día a día en silencio y oculta a los ojos de la sociedad, la violencia de género que sufren sus integrantes y los escasos medios para hacerle frente con los que cuentan.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-al-calor" aria-labelledby="syn-al-calor-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-al-calor-justicia.webp" width="480" height="766" alt="Portada de «La Inefable: Al calor de la justicia», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-al-calor-title">La Inefable</h3>
+    <p class="book__sub">Al calor de la justicia</p>
+    <p>La desaparición de dos adolescentes del seno de familias acomodadas de la villa turística de Carlos Paz, Córdoba de Argentina, trae a la memoria de los lugareños un caso enigmático e impune ocurrido el miércoles 11 de marzo de 2015 en el Cerro de la Cruz, donde una mujer de 36 años, Andrea Belén Catana, caminó por el sendero por el cual se accede a la cruz en la cima del cerro y que reproduce las catorce estaciones del vías crucis y jamás bajo. Andrea fue violada y asesinada en ese cerro maldito. Cuando se encontró su cuerpo, también se encontró el cuerpo de un fotógrafo.</p>
+    <p>La Inefable- Al calor de la Justicia, es una novela negra en la que el autor, ex oficial superior de las fuerzas policiales cordobesas, a través de la ficción, nos hace reflexionar sobre la gravedad que significa la impunidad de este tipo de crímenes.</p>
+    <p>Una magnifica evocación Balzaquiana, de retratar la realidad social cordobesa en materia de seguridad: Femicidios, tráfico y consumo de drogas, violencia de género, que atraviesan los diferentes estratos sociales.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-sombra-leyes" aria-labelledby="syn-sombra-leyes-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-sombra-leyes.webp" width="480" height="768" alt="Portada de «La Inefable: A la sombra de las leyes… Santa Fe», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-sombra-leyes-title">La Inefable</h3>
+    <p class="book__sub">A la sombra de las leyes… Santa Fe</p>
+    <p>La mala relación entre la Jefa de policía de una ciudad mediterránea y su jefe directo, fuerzan las vacaciones de la máxima autoridad policial, quien decide un viaje junto a su pareja a una provincia vecina con un gran acervo cultural, que le devuelva su paz interior, pero lejos de la calma, ni bien ingresan a esa provincia confirman lo que los medios periodísticos hacia años venían cronicando respecto a que la misma era atravesada por el narcotráfico y la corrupción. Sus condiciones de policías, los obligara a involucrarse en casos complejos contra una organización criminal que desafía desde hace tiempo no solo a la justicia de esa provincia portuaria, sino al Sistema de Justicia de la República Argentina.</p>
+    <p>LA INEFABLE-A LA SOMBRA DE LAS LEYES… SANTA FE, es una novela negra en el que el autor con un dominio del genero puesto en evidencia en sus novelas anteriores-LA INEFABLE-DE OPERADORA TURISTICA A MUJER POLICIA, - LA INEFABLE-TRAS LOS PASOS DE UN ASESINO CITADINO, - LA INEFABLE-DESAPARICIONES Y MUERTE EN LAS ALTAS CUMBRES- Y LA INEFABLE-LA DEIDAD DEL OLIMPO, nos entrega un policial contundente. Un libro que se fortalece con el correlato verosímil de la corrupción que afecta el sistema jurídico-político de la Argentina en este último cuarto siglo y desvela los desaciertos en materia de Seguridad Publica en una provincia mediterránea de la Argentina.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-deidad" aria-labelledby="syn-deidad-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-deidad-olimpo.webp" width="480" height="766" alt="Portada de «La Inefable: La Deidad del Olimpo», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-deidad-title">La Inefable</h3>
+    <p class="book__sub">La Deidad del Olimpo</p>
+    <p>Alonso, no es una simple mujer detective policial, en esta historia es la Jefa de una de las policías más importante de la Argentina, más precisamente de la provincia de Córdoba, y ha llegado a ese puesto con la convicción de que a los cambios en materia de seguridad pública, los debe realizar alguien que conozca no solo lo jurídico, sino que base sus conocimientos en lo empírico y justamente ella con una vasta trayectoria en su meteórica carrera policial, iniciara el tan ansiado cambio en el paradigma de la seguridad, para comenzar a delinear la humanización de las fuerzas civiles armadas que comandará y que se enmarca en el modelo de Seguridad Humana. La tarea no le será para nada sencilla, porque no solo deberá luchar contra la actividad del hampa, sino que deberá hacerlo también contra una estructura del gobierno, creada para que cualquier cambio institucional que se pretenda realizar, solo quede en un maquillaje con tintes electoralistas. Para quienes ya conocen a la comisaria detective Verónica Alonso, saben que empleara todos los recursos, hasta los menos ortodoxos de la mano de su fiel excompañero, el policía retirado de la fuerza policial Rafael Constantino, para lograr sus metas, que la lleven a cumplir su objetivo principal.</p>
+    <p>Con un dominio del género, puesto en evidencia en sus trabajos anteriores y que corresponden a la serie de novelas negras LA INEFABLE, como “De operadora turística a mujer policía”- “Tras los pasos de un asesino citadino”, y “Muerte y desapariciones en las Altas Cumbres”, Marco Antonio Séptimo, nos brinda en “La Deidad del Olimpo” una novela negra contundente. Un libro que trata los intereses creados alrededor de la gestión de la seguridad pública, describiendo el rol de cada referente social, operador jurídico, e integrantes del sistema Juridico-politico de la Provincia de Córdoba-Argentina de las ultimas décadas.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-amor-covid" aria-labelledby="syn-amor-covid-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-amor-covid.webp" width="480" height="766" alt="Portada de «Amor en tiempos del Covid 19», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-amor-covid-title">Amor en tiempos del Covid 19</h3>
+    <p>Una historia de amor, que surge en el seno del Cerro Uritorco, en una de las ciudades más importantes de Argentina en el continente sudamericano, en medio de una aventura, por descubrir lo desconocido.</p>
+    <p>Dos grupos de jóvenes, uno integrado por tres jovencitas periodistas de la generación millennials y otro grupo integrado por tres hombres de la generación X, se conocen en el acenso al místico cerro. Los motivos de su presencia en el lugar, coinciden, siendo la mitología del cerro, y sus curiosidades, como el mito de la existencia de una ciudad subterránea y el enigma de las luces del Uritorco. Vivencian experiencias llenas de misterio, intriga, y aventura al compartir campamento debido a situaciones urgentes acaecidas de improviso durante su estancia en el recóndito lugar.</p>
+    <p>Durante la interacción de los grupos, surgen relaciones de amistad y de amor. Los integrantes del nutrido grupo, no poseen conectividad e ignoran que el mundo atraviesa una pandemia con características devastadoras. Recién cuando finalmente logran descender de la montaña, al recobrar la señal de internet en sus aparatos de telefonía celular, se anotician de la situación sanitaria global.</p>
+    <p>El destino hace difícil que vuelvan a verse personalmente Tony y Mariela, y las medidas sanitarias, con medidas restrictivas muy severas dispuestas a nivel global contribuyeron a mantenerlos alejados.</p>
+    <p>Una novela romántica, que te mantendrá expectante hasta su última página, pero que también cuestiona la falta de humanidad en las medidas adoptadas en plena pandemia.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-codice" aria-labelledby="syn-codice-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-codice-tagarnas.webp" width="480" height="766" alt="Portada de «El Códice de los Tagarnas: Sapere aude», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-codice-title">El Códice de los Tagarnas</h3>
+    <p class="book__sub">Sapere aude</p>
+    <p>Un libro para el estudio de la seguridad latinoamericana, basado en un nuevo paradigma que nos propone el autor a través de su obra literaria Sécurité Humaine.</p>
+    <p>Durante los años noventa, un joven aspirante a cadete de policía, vivencia la crueldad de un sistema de educación que enfatiza la obediencia y la disciplina mediante un modelo de organización jerárquica, centralizada y de tipo militar que facilita la disciplina interna, pero que atenta contra el modelo de seguridad que reclama la sociedad del siglo XXI.</p>
+    <p>La novela plantea no solo la brutalidad que viven los cadetes de policía durante su formación, sino que también proyecta reformas para avanzar hacia un modelo de administración más flexible de seguridad como los que requiere la sociedad contemporánea dentro de un proceso de democratización que ha vivido la región en años recientes y que ha fortalecido las demandas por cambios institucionales que reduzcan los niveles de violencia policial mediante una mayor profesionalización del personal y de las estrategias policiales a través de las universidades públicas en reemplazo de las instituciones de formación policial.</p>
+    <p>A lo largo de las páginas de esta extraordinaria novela, como nos tiene acostumbrado el autor, también hay tiempo para el romanticismo, y Rocamadur vive una historia de amor que plantea lo difícil que se tornan las relaciones humanas para quien decide abrazar una carrera policial.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-pandemic" aria-labelledby="syn-pandemic-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-pandemic.webp" width="480" height="766" alt="Portada de «Pandemic Hyperconnected: Guardians of Nature», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-pandemic-title" lang="en">Pandemic Hyperconnected</h3>
+    <p class="book__sub" lang="en">Guardians of Nature</p>
+    <p lang="en">A fantastic tale of life in times of a new coronavirus Sars-Covid 3. The story takes place in the year 2026, where a group of humans resist in a remote place on earth, the onslaught of a new coronavirus that is wiping out the human race. The survivors, led by Johan Menna, a retired army captain, try to remain isolated and organize a human resistance to a pandemic attack by what appear to be extraterrestrials.</p>
+    <p lang="en">It is an all-out fight between the survivors and the covidiots, added to the mysterious attack of an external enemy whose origin in the universe is hard to know. Intrigue, suspense and terror in the plot of this original novel, where, as the author is accustomed to, there is time for love. Myths and urban legends, in the development of the story, will keep the reader expectant chapter by chapter until the end, with unexpected twists in the plot, where not everything is as it seems to be, and surprises occur with a handling of suspense that will undoubtedly provoke in the reader anguish, melancholy, which will make him evade reality.</p>
+    <p lang="en">The novel seeks to provoke the necessary reflection on the care of nature, through fictional situations that could well become reality if humanity does not accept the mistakes made in the care of the planet and tries to give answers to existential questions about the meaning of life, happiness, love, in a philosophical way.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="syn-dialog" id="syn-pandemials" aria-labelledby="syn-pandemials-title">
+  <div class="syn">
+    <img class="syn__cover" src="img/opt/libro-pandemials.webp" width="480" height="766" alt="Portada de «Pandemials: Hiperconectados», de Marco Antonio Séptimo" decoding="async">
+    <div class="syn__body">
+    <p class="eyebrow">Sinopsis</p>
+    <h3 class="syn__title" id="syn-pandemials-title">Pandemials</h3>
+    <p class="book__sub">Hiperconectados</p>
+    <p>Un relato fantástico de la vida en tiempos de un nuevo coronavirus Sars-Covid 3. La historia ocurre en el Año 2026, donde un grupo de humanos resiste en un recóndito lugar en la tierra, los embates de un nuevo coronavirus que esta exterminando la raza humana. Los sobrevivientes liderados por Johan Menna, un capitán retirado del ejército, intentan permanecer aislados y organizar una resistencia humana ante un ataque en plena pandemia, de quienes parecen ser extraterrestres.</p>
+    <p>Es una lucha sin cuartel entre los sobrevivientes y los covidiotas, sumado al misterioso ataque de un enemigo externo que le es difícil saber su origen en el universo. Intriga, suspenso y terror en la trama de esta original novela, donde como ya nos tiene acostumbrados el autor, existe el tiempo para el amor. Mitos y leyendas urbanas, en el desarrollo de la historia, mantendrán al lector expectante capitulo a capitulo hasta el final, con giros inesperados en su trama, donde no todo es como parece ser, y se producen sorpresas con un manejo del suspenso que sin dudas provocara en el lector angustias, melancolías, que lo harán evadir de la realidad.</p>
+    <p>La novela busca provocar la necesaria reflexión sobre el cuidado de la naturaleza, a través de situaciones ficcionales que bien podrían convertirse realidad si la humanidad no acepta los errores cometidos en el cuidado del planeta e intenta dar respuestas a preguntas existenciales sobre el sentido de la vida, la felicidad, el amor, de una manera filosófica.</p>
+    <button class="btn btn--ghost btn--sm" type="button" data-close>Cerrar</button>
+    </div>
+  </div>
 </dialog>
 
 <script src="main.js" defer></script>
